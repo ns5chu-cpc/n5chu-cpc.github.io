@@ -1,0 +1,9 @@
+.mame{
+  display: flex;
+}
+.mame-left {
+  width: 49%;
+}
+.mame-content {
+  width: 49%;
+}
