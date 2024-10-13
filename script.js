@@ -1,11 +1,11 @@
 function change_theme(theme){
   if(theme == 'system'){
     document.getElementById('html').classList.remove("theme-light", "theme-dark");
-    document.cookie = "theme=system; max-age=43200; SameSite=Lax;"
+    document.cookie = "theme=system; max-age=43200; path=/; SameSite=Lax;";
   }else{
     document.getElementById('html').classList.remove("theme-light", "theme-dark");
     document.getElementById('html').classList.add(theme);
-    document.cookie = "theme=" + theme + "; max-age=43200; SameSite=Lax;"
+    document.cookie = "theme=" + theme + "; max-age=43200; path=/; SameSite=Lax;";
   }
 }
 
