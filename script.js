@@ -1,29 +1,20 @@
 function change_theme(theme){
   if(theme == 'system'){
     document.getElementById('html').classList.remove("theme-light", "theme-dark");
-    document.cookie = "theme=theme-light; max-age=0; path=/; SameSite=Lax;";
-    document.cookie = "theme=theme-dark; max-age=0; path=/;  SameSite=Lax;";
     document.cookie = "theme=system; max-age=0; path=/; SameSite=Lax;";
-    document.cookie = "theme=system; max-age=43200; path=/; SameSite=Lax;";
   }else{
     document.getElementById('html').classList.remove("theme-light", "theme-dark");
     document.getElementById('html').classList.add(theme);
-    document.cookie = "theme=theme-light; max-age=0; path=/; SameSite=Lax;";
-    document.cookie = "theme=theme-dark; max-age=0; path=/;  SameSite=Lax;";
     document.cookie = "theme=system; max-age=0; path=/; SameSite=Lax;";
     document.cookie = "theme=" + theme + "; max-age=43200; path=/; SameSite=Lax;";
   }
 }
 
-if ( ~document.cookie.indexOf('theme=system')) {
-  change_theme('system');
-}else{
-  if ( ~document.cookie.indexOf('theme=theme-light')) {
+if ( ~document.cookie.indexOf('theme=theme-light')) {
   change_theme('theme-light');
-  }else{
-    if ( ~document.cookie.indexOf('theme=theme-dark')) {
-      change_theme('theme-dark');
-    }
+}else{
+  if ( ~document.cookie.indexOf('theme=theme-dark')) {
+    change_theme('theme-dark');
   }
 }
 
